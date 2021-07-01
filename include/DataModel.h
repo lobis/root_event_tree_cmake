@@ -5,10 +5,14 @@
 #include <TObject.h>
 
 class Event : public TObject {
+
 public:
     Int_t fEventID;
 
-    ClassDef(Event, 1);
+    Event() {}
+    ~Event() {}
+
+    ClassDefInline(Event, 1);
 };
 
 

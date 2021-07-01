@@ -1,9 +1,12 @@
 #include <TFile.h>
+#include <TInterpreter.h>
 #include <TTree.h>
 
 #include "DataModel.h"
 
 int main() {
+    gInterpreter->Declare("#include \"DataModel.h\"");
+
     TTree *tree = new TTree("tree", "My Tree");
     auto event = new Event();
 
@@ -17,5 +20,4 @@ int main() {
     auto file = new TFile("tree.root", "RECREATE");
     tree->Write();
     file->Close();
-    delete file;
 }

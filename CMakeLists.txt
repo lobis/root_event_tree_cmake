@@ -14,4 +14,3 @@ target_link_libraries(${PROJECT_NAME} ${ROOT_LIBRARIES} ROOT::RIO)
 target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/include/DataModel.h DESTINATION .)
-

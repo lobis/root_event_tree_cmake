@@ -4,6 +4,14 @@
 
 #include <TObject.h>
 
+class Track {
+public:
+    Int_t fTrackID;
+
+    Track() {}
+    ~Track() {}
+};
+
 class Event : public TObject {
 
 public:
@@ -11,6 +19,8 @@ public:
 
     Event() {}
     ~Event() {}
+
+    std::vector<Track> fTracks;
 
     ClassDefInline(Event, 1);
 };

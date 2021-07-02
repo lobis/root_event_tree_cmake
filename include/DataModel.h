@@ -10,6 +10,8 @@ public:
 
     Step() {}
     ~Step() {}
+
+    ClassDefInline(Step, 1);
 };
 
 class Track {
@@ -19,6 +21,8 @@ public:
 
     Track() {}
     ~Track() {}
+
+    ClassDefInline(Track, 1);
 };
 
 class Event : public TObject {

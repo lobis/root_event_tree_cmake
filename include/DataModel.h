@@ -4,28 +4,36 @@
 
 #include <TObject.h>
 
-class Step {
+class Steps {
 public:
-    Int_t fStepID;
+    std::vector<Int_t> fStepID;
+    std::vector<TString> fProcessName;
 
-    Step() {}
-    ~Step() {}
+    Steps() {}
+    ~Steps() {}
 
-    ClassDefInline(Step, 1);
+    inline void InsertStep(Int_t i, const TString &processName) {
+        fStepID.push_back(i);
+        fProcessName.emplace_back(processName);
+    }
+
+    ClassDefInline(Steps, 1);// is this really necessary?
 };
 
 class Track {
 public:
     Int_t fTrackID;
-    std::vector<Step> fSteps;
+    Steps fSteps;
 
-    Track() {}
+    Track() {
+        fSteps = Steps();
+    }
     ~Track() {}
 
-    ClassDefInline(Track, 1);
+    ClassDefInline(Track, 1);// is this really necessary?
 };
 
-class Event : public TObject {
+class Event {
 
 public:
     Int_t fEventID;

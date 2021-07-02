@@ -26,10 +26,8 @@ int main() {
             Track track;
             track.fTrackID = j;
 
-            for (int k = 0; k < 20; k++) {
-                Step step;
-                step.fStepID = k;
-                track.fSteps.push_back(step);
+            for (int k = 0; k < 5; k++) {
+                track.fSteps.InsertStep(k, "test process");
             }
 
             event->fTracks.push_back(track);

@@ -17,7 +17,7 @@ int main() {
     auto tree = new TTree(treeName, "My Tree");
     auto event = new Event();
 
-    tree->Branch("Event", &event);
+    tree->Branch("fEvents", &event);
 
     for (int i = 0; i < 100; i++) {
         event->fEventID = i;

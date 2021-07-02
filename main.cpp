@@ -25,6 +25,13 @@ int main() {
         for (int j = 0; j < 10; j++) {
             Track track;
             track.fTrackID = j;
+
+            for (int k = 0; k < 20; k++) {
+                Step step;
+                step.fStepID = k;
+                track.fSteps.push_back(step);
+            }
+
             event->fTracks.push_back(track);
         }
         tree->Fill();

@@ -4,9 +4,18 @@
 
 #include <TObject.h>
 
+class Step {
+public:
+    Int_t fStepID;
+
+    Step() {}
+    ~Step() {}
+};
+
 class Track {
 public:
     Int_t fTrackID;
+    std::vector<Step> fSteps;
 
     Track() {}
     ~Track() {}

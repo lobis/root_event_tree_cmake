@@ -23,6 +23,7 @@ public:
 class Track {
 public:
     Int_t fTrackID;
+    TString fParticleName;
     Steps fSteps;
 
     Track() {

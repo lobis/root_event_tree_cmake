@@ -1,9 +1,15 @@
 #include <TTree.h>
 
-class Event : public TObject {
+class Track {
+public:
+    Int_t fTrackID;
+    TString fParticleName;
+};
 
+class Event {
 public:
     Int_t fEventID;
+    std::vector<Track> fTracks;
 
     ClassDef(Event, 1);
 };
@@ -18,11 +24,19 @@ void tree() {
 
     for (int i = 0; i < 100; i++) {
         event->fEventID = i;
+
+        for (int j = 0; j < 10; j++) {
+            Track track;
+            track.fParticleName = "testParticle";
+            track.fTrackID = j;
+
+            event->fTracks.push_back(track);
+        }
+
         tree->Fill();
     }
 
     //tree->StartViewer();
-
 
     auto file = new TFile("tree.root", "RECREATE");
     tree->Write();

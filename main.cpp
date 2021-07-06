@@ -25,7 +25,7 @@ int main() {
         for (int j = 0; j < 10; j++) {
             Track track;
             track.fTrackID = j;
-
+            track.fParticleName = "testParticle";
             for (int k = 0; k < 5; k++) {
                 track.fSteps.InsertStep(k, "test process");
             }
